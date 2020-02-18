@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+#cke_editor1 {
+  height: 500px;
+
+  .h-card {
+    background: #DCDCDC;
+    padding: 3px 6px;
+    border-bottom: 1px dashed #ccc;
+
+    .p-tel {
+      font-style: italic;
+    }
+
+    .p-tel::before,
+    .p-tel::after {
+      font-style: normal;
+    }
+
+    .p-tel::before {
+      content: "(☎ ";
+    }
+
+    .p-tel::after {
+      content: ")";
+    }
+
+
+     hr {
+      border-style: dotted;
+      border-color: #DCDCDC;
+      border-width: 1px 0 0;
+    }
+  }
+
+}
+

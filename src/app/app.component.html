@@ -1,16 +1,27 @@
 <div class="columns">
     <div class="editor">
-        <ckeditor
-            #editor
-            id="editor1"
-            name="editor1"
-            [(data)]="editorData">
+        <ckeditor [(ngModel)]="mycontent"
+                  cdkDropList
+                  (cdkDropListDropped)="drop($event)"
+                  id="editor1" name="editor1"
+                  [config]="ckeConfig"
+                  (change)="onChange($event)">
         </ckeditor>
     </div>
-    <div class="contacts">
+    <div class="contacts" >
         <h3>List of Droppable Contacts</h3>
-        <ul id="contactList"></ul>
+        <ul id="contactList">
+            <li *ngFor="let contact of CONTACTS">
+            <span class="h-card" cdkDrag>
+            <a href="mailto: {{contact.email}}" class="p-name u-email">
+                {{contact.name}}
+            </a>
+            <span class="p-tel">
+                {{contact.tel}}
+            </span>
+            </span>
+            </li>
+        </ul>
     </div>
 </div>
 
-<router-outlet></router-outlet>

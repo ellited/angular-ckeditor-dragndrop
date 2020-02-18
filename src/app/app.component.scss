@@ -25,6 +25,9 @@
   padding: 0 0 0 20px;
 }
 
+
+
+
 #contactList {
   list-style-type: none;
   margin: 0 !important;
@@ -49,55 +52,51 @@
   margin-left: -5px;
 }
 
-.contact {
+
+#contactList li {
   padding: 0 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.contact .u-photo {
+#contactList li .u-photo {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
 }
 
-#editor1 .h-card {
-  background: #FFFDE3;
-  padding: 3px 6px;
-  border-bottom: 1px dashed #ccc;
-}
 
-#editor1 {
-  border: 1px solid #E7E7E7;
-  padding: 0 20px;
-  background: #fff;
-  position: relative;
-}
+//#editor1 {
+//  border: 1px solid #E7E7E7;
+//  padding: 0 20px;
+//  background: #fff;
+//  position: relative;
+//}
 
-#editor1 .h-card .p-tel {
-  font-style: italic;
-}
+//#editor1 .h-card .p-tel {
+//  font-style: italic;
+//}
 
-#editor1 .h-card .p-tel::before,
-#editor1 .h-card .p-tel::after {
-  font-style: normal;
-}
+//#editor1 .h-card .p-tel::before,
+//#editor1 .h-card .p-tel::after {
+//  font-style: normal;
+//}
 
-#editor1 .h-card .p-tel::before {
-  content: "(☎ ";
-}
-
-#editor1 .h-card .p-tel::after {
-  content: ")";
-}
-
-#editor1 h1 {
-  text-align: center;
-}
-
-#editor1 hr {
-  border-style: dotted;
-  border-color: #DCDCDC;
-  border-width: 1px 0 0;
-}
+//#editor1 .h-card .p-tel::before {
+//  content: "(☎ ";
+//}
+//
+//#editor1 .h-card .p-tel::after {
+//  content: ")";
+//}
+//
+//#editor1 h1 {
+//  text-align: center;
+//}
+//
+//#editor1 hr {
+//  border-style: dotted;
+//  border-color: #DCDCDC;
+//  border-width: 1px 0 0;
+//}
