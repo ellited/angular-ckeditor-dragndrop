@@ -77,7 +77,8 @@ export class AppComponent implements OnInit {
         }
     ];
 
-    // @ViewChild('editor1') ckeditor: any;
+    @ViewChild('editor1') ckeditor: any;
+
 
     constructor() {
     }
@@ -86,9 +87,7 @@ export class AppComponent implements OnInit {
 
     }
 
-    drop(event: CdkDragDrop<string[]>) {
 
-    }
 
     onChange($event: any): void {
         console.log('onChange');
