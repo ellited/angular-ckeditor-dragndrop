@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import {FormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AppRoutingModule,
     CKEditorModule,
     FormsModule,
-    DragDropModule
+    DragDropModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

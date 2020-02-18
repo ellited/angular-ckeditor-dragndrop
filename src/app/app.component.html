@@ -1,23 +1,19 @@
-<div class="columns">
+<div class="wrapper">
     <div class="editor">
-        <ckeditor [(ngModel)]="mycontent"
-
-                  id="editor1" name="editor1"
-                  [config]="ckeConfig"
-
-                  (change)="onChange($event)">
+        <ckeditor
+                id="variablesEditor"
+                name="variablesEditor"
+                [(ngModel)]="content"
+                [config]="ckeConfig"
+                (change)="onChange($event)">
         </ckeditor>
     </div>
-    <div class="contacts">
-        <h3>List of Droppable Contacts</h3>
-        <ul id="contactList">
 
-            <span class="h-card" *ngFor="let contact of CONTACTS">
-            <a [href]="contact.name" class="item">
-                {{contact.name}}
-            </a>
-            </span>
+    <mat-list id="variablesList">
+        <mat-list-item *ngFor="let variable of variables">
+            <a class="variable" href="#">{{variable.name}}</a>
+            <label class="variable-description">{{variable.description}}</label>
+        </mat-list-item>
+    </mat-list>
 
-        </ul>
-    </div>
 </div>

@@ -1,105 +1,34 @@
-.columns {
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  border: 1px solid #E7E7E7;
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 400px;
 }
 
-.columns:after {
-  content: "";
-  clear: both;
-  display: block;
+#variablesList {
+  display: grid;
+  grid-template-columns: auto;
+
+  .variable {
+    border-radius: 15px;
+    border: solid 1px #e8e8e8;
+    background-color: #f5f5f5;
+    font-size: 12px;
+    text-align: center;
+    height: 24px;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-right: 10px;
+
+    box-sizing: border-box;
+    cursor: move;
+    text-decoration: unset;
+    color: black;
+  }
+
+  .variable-description {
+    font-size: 12px;
+  }
+
 }
 
-.columns>.editor {
-  float: left;
-  width: 65%;
-  position: relative;
-  z-index: 1;
-}
-
-.columns>.contacts {
-  float: right;
-  width: 35%;
-  box-sizing: border-box;
-  padding: 0 0 0 20px;
-}
-
-
-
-
-#contactList {
-  list-style-type: none;
-  margin: 0 !important;
-  padding: 0;
-}
-
-#contactList li {
-  background: #FAFAFA;
-  margin-bottom: 1px;
-  height: 56px;
-  line-height: 56px;
-  cursor: pointer;
-}
-
-#contactList li:nth-child(2n) {
-  background: #F3F3F3;
-}
-
-#contactList li:hover {
-  background: #FFFDE3;
-  border-left: 5px solid #DCDAC1;
-  margin-left: -5px;
-}
-
-
-#contactList li {
-  padding: 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#contactList li .u-photo {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.item {
-  z-index: 1000;
-}
-
-//#editor1 {
-//  border: 1px solid #E7E7E7;
-//  padding: 0 20px;
-//  background: #fff;
-//  position: relative;
-//}
-
-//#editor1 .h-card .p-tel {
-//  font-style: italic;
-//}
-
-//#editor1 .h-card .p-tel::before,
-//#editor1 .h-card .p-tel::after {
-//  font-style: normal;
-//}
-
-//#editor1 .h-card .p-tel::before {
-//  content: "(☎ ";
-//}
-//
-//#editor1 .h-card .p-tel::after {
-//  content: ")";
-//}
-//
-//#editor1 h1 {
-//  text-align: center;
-//}
-//
-//#editor1 hr {
-//  border-style: dotted;
-//  border-color: #DCDCDC;
-//  border-width: 1px 0 0;
-//}

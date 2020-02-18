@@ -1,52 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Y</title>
-  <base href="/">
+    <meta charset="utf-8">
+    <title>Y</title>
+    <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <script src="https://cdn.ckeditor.com/4.9.2/full-all/ckeditor.js"></script>
-    <script> CKEDITOR.config.forcePasteAsPlainText = true; </script>
-  <script type="text/javascript">
-    CKEDITOR.plugins.addExternal('hcard', '/plugins/hcard/', 'plugin.js');
-  </script>
 
-  <script type="text/javascript">
+    <script type="text/javascript">
+        CKEDITOR.plugins.addExternal('varcard', '/plugins/varcard/', 'plugin.js');
+    </script>
 
-    CKEDITOR.on('instanceReady', function() {
-      // When an item in the contact list is dragged, copy its data into the drag and drop data transfer.
-      // This data is later read by the editor#paste listener in the hcard plugin defined above.
-      CKEDITOR.document.getById('contactList').on('dragstart', function(evt) {
+    <script type="text/javascript">
+        CKEDITOR.on('instanceReady', function () {
+            // When an item in the contact list is dragged, copy its data into the drag and drop data transfer.
+            // This data is later read by the editor#paste listener in the varcard plugin defined above.
+            CKEDITOR.document.getById('variablesList').on('dragstart', function (evt) {
 
-        // The target may be some element inside the draggable div (e.g. the image), so get the div.h-card.
-        const target = evt.data.getTarget().getAscendant('a', true);
+                // The target may be some element inside the draggable div (e.g. the image), so get the div.variable-card.
+                const target = evt.data.getTarget().getAscendant('a', true);
 
-        // Initialization of the CKEditor data transfer facade is a necessary step to extend and unify native
-        // browser capabilities. For instance, Internet Explorer does not support any other data type than 'text' and 'URL'.
-        // Note: evt is an instance of CKEDITOR.dom.event, not a native event.
-        CKEDITOR.plugins.clipboard.initDragDataTransfer(evt);
+                // Initialization of the CKEditor data transfer facade is a necessary step to extend and unify native
+                // browser capabilities. For instance, Internet Explorer does not support any other data type than 'text' and 'URL'.
+                // Note: evt is an instance of CKEDITOR.dom.event, not a native event.
+                CKEDITOR.plugins.clipboard.initDragDataTransfer(evt);
 
-        const dataTransfer = evt.data.dataTransfer;
-        // Pass an object with contact details. Based on it, the editor#paste listener in the hcard plugin
-        // will create the HTML code to be inserted into the editor. You could set 'text/html' here as well, but:
-        // * It is a more elegant and logical solution that this logic is kept in the hcard plugin.
-        // * You do not know now where the content will be dropped and the HTML to be inserted
-        // might vary depending on the drop target.
-        // You need to set some normal data types to backup values for two reasons:
-        // * In some browsers this is necessary to enable drag and drop into text in the editor.
-        // * The content may be dropped in another place than the editor.
-        dataTransfer.setData('contact', target.getText());
-        dataTransfer.setData('text/html', target.getText());
-      });
-    });
-
-  </script>
+                const dataTransfer = evt.data.dataTransfer;
+                // Pass an object with contact details. Based on it, the editor#paste listener in the varcard plugin
+                // will create the HTML code to be inserted into the editor. You could set 'text/html' here as well, but:
+                // * It is a more elegant and logical solution that this logic is kept in the varcard plugin.
+                // * You do not know now where the content will be dropped and the HTML to be inserted
+                // might vary depending on the drop target.
+                // You need to set some normal data types to backup values for two reasons:
+                // * In some browsers this is necessary to enable drag and drop into text in the editor.
+                // * The content may be dropped in another place than the editor.
+                dataTransfer.setData('variable', target.getText());
+                dataTransfer.setData('text/html', target.getText());
+            });
+        });
+    </script>
 
 </head>
 <body>
-  <app-root></app-root>
+<app-root></app-root>
 </body>
 </html>
